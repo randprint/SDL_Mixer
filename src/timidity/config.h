@@ -40,7 +40,7 @@
 /* A somewhat arbitrary frequency range. The low end of this will
    sound terrible as no lowpass filtering is performed on most
    instruments before resampling. */
-#define MIN_OUTPUT_RATE 	4000
+#define MIN_OUTPUT_RATE 	100
 #define MAX_OUTPUT_RATE 	65000
 
 /* In percent. */
@@ -50,7 +50,7 @@
 
 /* Default sampling rate, default polyphony, and maximum polyphony.
    All but the last can be overridden from the command line. */
-#define DEFAULT_RATE	32000
+#define DEFAULT_RATE	48000
 /* #define DEFAULT_VOICES	32 */
 /* #define MAX_VOICES	48 */
 #define DEFAULT_VOICES	256

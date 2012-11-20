@@ -8,7 +8,7 @@ AS	= xenon-as
 RANLIB	= xenon-ranlib
 SRC_DIR = ./src
 
-CFLAGS=$(INCLUDE) -O3 -DXENON -ffast-math -fomit-frame-pointer -funroll-loops -ffunction-sections -fdata-sections -fno-tree-vectorize -fno-tree-slp-vectorize -ftree-vectorizer-verbose=1 -flto -fuse-linker-plugin -maltivec -mabi=altivec -fno-pic -mpowerpc64 -mhard-float -Wall -mcpu=cell -mtune=cell -m32 -fno-pic -mpowerpc64 -u read -u _start -u exc_base -D_REENTRANT -DOGG_MUSIC -DOGG_USE_TREMOR -DWAV_MUSIC -DMOD_MUSIC -DMID_MUSIC -DUSE_TIMIDITY_MIDI -I$(DEVKITXENON)/usr/include/ -I$(DEVKITXENON)/usr/include/SDL/ -I$(SRC_DIR)/mikmod -I$(SRC_DIR)/timidity
+CFLAGS=$(INCLUDE) -O3 -DXENON -DBYTE_ORDER=1 -DBIG_ENDIAN=1 -DLITTLE_ENDIAN=0 -ffast-math -fomit-frame-pointer -funroll-loops -ffunction-sections -fdata-sections -fno-tree-vectorize -fno-tree-slp-vectorize -ftree-vectorizer-verbose=1 -flto -fuse-linker-plugin -maltivec -mabi=altivec -fno-pic -mpowerpc64 -mhard-float -Wall -mcpu=cell -mtune=cell -m32 -fno-pic -mpowerpc64 -u read -u _start -u exc_base -D_REENTRANT -DOGG_MUSIC -DOGG_USE_TREMOR -DWAV_MUSIC -DMOD_MUSIC -DMID_MUSIC -DUSE_TIMIDITY_MIDI -I$(DEVKITXENON)/usr/include/ -I$(DEVKITXENON)/usr/include/SDL/ -I$(SRC_DIR)/mikmod -I$(SRC_DIR)/timidity
 
 TARGET  = libSDL_mixer.a
 SOURCES = $(filter-out $(SRC_DIR)/playwave.c $(SRC_DIR)/playmus.c $(SRC_DIR)/music_cmd.c, $(wildcard $(SRC_DIR)/*.c)) $(wildcard $(SRC_DIR)/mikmod/*.c) $(wildcard $(SRC_DIR)/timidity/*.c) 

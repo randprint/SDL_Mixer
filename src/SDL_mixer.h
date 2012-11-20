@@ -72,7 +72,7 @@ extern DECLSPEC const SDL_version * SDLCALL Mix_Linked_Version(void);
 #endif
 
 /* Good default values for a PC soundcard */
-#define MIX_DEFAULT_FREQUENCY	22050
+#define MIX_DEFAULT_FREQUENCY	48000
 #if SDL_BYTEORDER == SDL_LIL_ENDIAN
 #define MIX_DEFAULT_FORMAT	AUDIO_S16LSB
 #else
